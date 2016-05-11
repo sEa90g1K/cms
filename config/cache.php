@@ -11,9 +11,9 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-    */
+     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -24,27 +24,27 @@ return [
     | well as their drivers. You may even define multiple stores for the
     | same cache driver to group types of items stored in your caches.
     |
-    */
+     */
 
     'stores' => [
 
         'apc' => [
-            'driver' => 'apc',
+            'driver' => 'apc'
         ],
 
         'array' => [
-            'driver' => 'array',
+            'driver' => 'array'
         ],
 
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
-            'connection' => null,
+            'connection' => null
         ],
 
         'file' => [
             'driver' => 'file',
-            'path' => storage_path('framework/cache'),
+            'path' => storage_path('framework/cache')
         ],
 
         'memcached' => [
@@ -53,15 +53,15 @@ return [
                 [
                     'host' => env('MEMCACHED_HOST', '127.0.0.1'),
                     'port' => env('MEMCACHED_PORT', 11211),
-                    'weight' => 100,
-                ],
-            ],
+                    'weight' => 100
+                ]
+            ]
         ],
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
-        ],
+            'connection' => 'default'
+        ]
 
     ],
 
@@ -74,8 +74,8 @@ return [
     | be other applications utilizing the same cache. So, we'll specify a
     | value to get prefixed to all our keys so we can avoid collisions.
     |
-    */
+     */
 
-    'prefix' => 'laravel',
+    'prefix' => 'sea90g1k_cms'
 
 ];
